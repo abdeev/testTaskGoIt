@@ -1,13 +1,25 @@
+import { useEffect, useState } from "react";
 import s from "./Card.module.css";
 
-const Card = () => {
+const Card = ({ user, tweets, followers, avatar, isFollowing }) => {
+  const [Following, setFollowing] = useState(isFollowing);
+  const [followersCount, setFollowersCount] = useState(followers);
+
+  const handleFollowClick = () => {
+    setFollowing(!Following);
+    setFollowersCount(Following ? followersCount - 1 : followersCount + 1);
+  };
+  useEffect(() => {}, [isFollowing, followersCount]);
+  const followersCounter = followersCount
+    .toString()
+    .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1,");
+
   return (
     <div className={s.card}>
-      <logoGoIt className={s.logoGoit} />
       <img
         className={s.logoGoit}
         src="../../../public/Logo.png"
-        alt="background picture"
+        alt="logo GoIt company"
       />
       <img
         className={s.bgImage}
@@ -15,16 +27,19 @@ const Card = () => {
         alt="background picture"
       />
       <div className={s.cardDividerLine}>
-        <img
-          className={s.userAvatar}
-          src="../../../public/defaultAvatar.png"
-          alt="user avatar"
-        />
+        <img className={s.userAvatar} src={avatar} alt={`${user} avatar`} />
       </div>
-      <p className={s.descriptionCard}>777 tweets</p>
-      <p className={s.descriptionCard}>100500 followers</p>
-      <button className={`${s.followButton}`} type="button">
-        Follow
+      <p className={s.descriptionCard}>{tweets} tweets</p>
+      <p id="followers-count" className={s.descriptionCard}>
+        {followersCounter} followers
+      </p>
+
+      <button
+        id="follow-button"
+        className={`${s.followButton} ${Following ? s.following : ""}`}
+        onClick={handleFollowClick}
+      >
+        {Following ? "Following" : "Follow"}
       </button>
     </div>
   );
