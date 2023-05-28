@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "./redux/operations";
 import { getUsers } from "./redux/selectors";
-import s from "./App.css";
+import s from "./App.module.css";
 import Card from "./components/Card/Card";
 
 function App() {

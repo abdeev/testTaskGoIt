@@ -16,16 +16,8 @@ const Card = ({ user, tweets, followers, avatar, isFollowing }) => {
 
   return (
     <div className={s.card}>
-      <img
-        className={s.logoGoit}
-        src="../../../public/Logo.png"
-        alt="logo GoIt company"
-      />
-      <img
-        className={s.bgImage}
-        src="../../../public/bg.png"
-        alt="background picture"
-      />
+      <img className={s.logoGoit} src="/Logo.png" alt="logo GoIt company" />
+      <img className={s.bgImage} src="/bg.png" alt="background picture" />
       <div className={s.cardDividerLine}>
         <img className={s.userAvatar} src={avatar} alt={`${user} avatar`} />
       </div>

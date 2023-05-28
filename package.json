@@ -1,6 +1,6 @@
 {
   "name": "testforgoit",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -28,5 +28,17 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "vite": "^4.3.2"
-  }
+  },
+  "description": "Test task for technical interview in GoIT company",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdeev/testTaskGoIt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdeev/testTaskGoIt/issues"
+  },
+  "homepage": "https://github.com/abdeev/testTaskGoIt#readme"
 }

@@ -32,6 +32,18 @@ const usersSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+    updateUserInProgress(state) {
+      state.isLoading = true;
+    },
+    updateUserSuccess(id, state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.items = action.payload;
+    },
+    updateUserError(state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 });
 export const { fetchingInProgress, fetchingSuccess, fetchingError } =
